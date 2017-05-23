@@ -41,7 +41,16 @@ t0 = time()
 pred = clf.predict(features_test)
 print ("Prediction time: ", round(time() - t0, 3), "s")
 accuracy = accuracy_score(labels_test, pred)
-print(accuracy)
+print (accuracy)
 
+chris_label = 0
+for label in pred:
+    if label == 1:
+        chris_label += 1
+print (chris_label)
+
+print ("10: ", pred[10])
+print ("26: ", pred[26])
+print ("50: ", pred[50])
 
 #########################################################
