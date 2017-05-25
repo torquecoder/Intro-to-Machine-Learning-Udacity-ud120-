@@ -33,6 +33,8 @@ plt.show()
 
 
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn import tree
+from sklearn import svm
 from sklearn.metrics import accuracy_score
 
 clf = AdaBoostClassifier()
@@ -40,6 +42,15 @@ clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
 accuracy = accuracy_score(labels_test, pred)
 print (accuracy)
+
+# More accurate algorithm
+'''
+clf = svm.SVC(kernel = "rbf", C = 19000.0   )
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+accuracy = accuracy_score(labels_test, pred)
+print (accuracy)
+'''
 
 try:
     prettyPicture(clf, features_test, labels_test)
