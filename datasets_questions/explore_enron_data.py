@@ -18,4 +18,6 @@
 import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
-print (len(enron_data))
+print ("Total persons: ", len(enron_data))
+count = sum(len(v) for v in enron_data.itervalues()) / len(enron_data)
+print ("Total features per person: ", count)
